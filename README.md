@@ -12,11 +12,29 @@ created by the `mezzanine-project` script, it uses the post-1.3 structure.
 
 To create a new project using this template, do the following:
 
+    pip install mezzanine
     django-admin.py startproject --template=https://github.com/sephii/django-project-template/archive/mezzanine.zip myproject
     cd myproject
     pip install -r requirements/dev.txt
-    echo "postgres://user:password@database" > envdir/local/DATABASE_URL
-    python manage.py syncdb --all
+    echo "sqlite:///myproject.sqlite" > envdir/local/DATABASE_URL
+    python manage.py createdb
     python manage.py runserver
 
 You can now start hacking!
+
+Default settings supported via envdir
+-------------------------------------
+
+* SECRET_KEY
+* NEVERCACHE_KEY
+* STATIC_ROOT
+* DATABASE_URL
+
+The `DATABASE_URL` is set using
+[DJ-Database-URL](https://github.com/kennethreitz/dj-database-url). You'll find
+examples for the different connectors on the project page but here's a short
+list for convenience:
+
+* MySQL: mysql://user:password@host/database
+* PostgreSQL: postgres://user:password@host/database
+* SQLite: sqlite:////absolute/path/to/db/file or sqlite:///relative/path/to/db/file
