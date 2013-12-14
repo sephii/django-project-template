@@ -38,3 +38,6 @@ list for convenience:
 * MySQL: mysql://user:password@host/database
 * PostgreSQL: postgres://user:password@host/database
 * SQLite: sqlite:////absolute/path/to/db/file or sqlite:///relative/path/to/db/file
+
+Also don't forget to install the related database driver if you use anything
+else than SQLite (MySQL-python for MySQL, psycopg2 for PostgreSQL).
