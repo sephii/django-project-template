@@ -147,6 +147,8 @@ STATICFILES_FINDERS = (
 # a mode you'd pass directly to os.chmod.
 FILE_UPLOAD_PERMISSIONS = 0o644
 
+ALLOWED_HOSTS = tuple(get_env_variable('ALLOWED_HOSTS', '').splitlines())
+
 SECRET_KEY = get_env_variable('SECRET_KEY', '')
 NEVERCACHE_KEY = get_env_variable('NEVERCACHE_KEY', '')
 
