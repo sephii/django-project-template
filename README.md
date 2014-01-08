@@ -24,10 +24,11 @@ You can now start hacking!
 Default settings supported via envdir
 -------------------------------------
 
-* SECRET_KEY
-* NEVERCACHE_KEY
-* STATIC_ROOT
+* ALLOWED_HOSTS (1 host / line)
 * DATABASE_URL
+* NEVERCACHE_KEY
+* SECRET_KEY
+* STATIC_ROOT
 
 The `DATABASE_URL` is set using
 [DJ-Database-URL](https://github.com/kennethreitz/dj-database-url). You'll find

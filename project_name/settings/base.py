@@ -23,7 +23,7 @@ SECRET_KEY = get_env_variable('SECRET_KEY', '')
 DEBUG = bool(get_env_variable('DEBUG', False))
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = tuple(get_env_variable('ALLOWED_HOSTS', '').splitlines())
 
 
 # Application definition
