@@ -2,6 +2,7 @@ from __future__ import absolute_import, unicode_literals
 import dj_database_url
 
 from . import get_env_variable
+from .. import get_project_root_path
 
 ######################
 # MEZZANINE SETTINGS #
@@ -170,9 +171,7 @@ DATABASES = {
 import os
 
 # Full filesystem path to the project.
-PROJECT_ROOT = os.path.abspath(os.path.abspath(
-    os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..')
-))
+PROJECT_ROOT = get_project_root_path()
 
 # Name of the directory for the project.
 PROJECT_DIRNAME = '{{ project_name }}'
