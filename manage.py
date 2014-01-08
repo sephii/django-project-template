@@ -1,7 +1,8 @@
 #!/usr/bin/env python
-import glob
 import os
 import sys
+
+from {{ project_name }} import get_project_root_path, import_env_vars
 
 if __name__ == "__main__":
     if 'test' in sys.argv:
@@ -9,11 +10,7 @@ if __name__ == "__main__":
     else:
         env_dir = os.path.join('envdir', 'local')
 
-    env_vars = glob.glob(os.path.join(env_dir, '*'))
-    for env_var in env_vars:
-        with open(env_var, 'r') as env_var_file:
-            os.environ.setdefault(env_var.split(os.sep)[-1],
-                                  env_var_file.read().strip())
+    import_env_vars(os.path.join(get_project_root_path(), env_dir))
 
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{ project_name }}.settings.dev")
 

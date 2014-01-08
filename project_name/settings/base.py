@@ -8,13 +8,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/
 """
 
-import os
 import dj_database_url
 
 from . import get_env_variable
+from .. import get_project_root_path
 
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = get_project_root_path()
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = get_env_variable('SECRET_KEY', '')
