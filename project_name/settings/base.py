@@ -14,7 +14,7 @@ from . import get_env_variable
 from .. import get_project_root_path
 
 
-BASE_DIR = get_project_root_path()
+PROJECT_ROOT = get_project_root_path()
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = get_env_variable('SECRET_KEY', '')
