@@ -216,6 +216,11 @@ ROOT_URLCONF = "%s.urls" % PROJECT_DIRNAME
 # Don't forget to use absolute paths, not relative paths.
 TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, "templates"),)
 
+# This allows you to put project-wide translations in the "locale" directory of
+# your project
+LOCALE_PATHS = (
+    os.path.join(PROJECT_ROOT, 'locale'),
+)
 
 ################
 # APPLICATIONS #
