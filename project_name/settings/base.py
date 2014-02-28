@@ -72,6 +72,13 @@ USE_L10N = True
 USE_TZ = True
 
 
+# This allows you to put project-wide translations in the "locale" directory of
+# your project
+LOCALE_PATHS = (
+    os.path.join(PROJECT_ROOT, 'locale'),
+)
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/{{ docs_version }}/howto/static-files/
 
