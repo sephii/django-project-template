@@ -1,5 +1,5 @@
 from . import get_env_variable
-from .base import *
+from .base import *  # noqa
 
 DEBUG = bool(get_env_variable('DEBUG', True))
 TEMPLATE_DEBUG = DEBUG
