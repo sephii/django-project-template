@@ -30,7 +30,7 @@ ALLOWED_HOSTS = tuple(get_env_variable('ALLOWED_HOSTS', '').splitlines())
 
 # Application definition
 
-INSTALLED_APPS = (
+UPSTREAM_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +39,12 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
 )
+
+# Project apps tested by jenkins (everything in apps/)
+PROJECT_APPS = filter(lambda f: f != '__init__.py',
+                      tuple(os.listdir(os.path.join('.', 'apps'))))
+
+INSTALLED_APPS = UPSTREAM_APPS + PROJECT_APPS
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
