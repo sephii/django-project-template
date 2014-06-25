@@ -41,8 +41,10 @@ UPSTREAM_APPS = (
 )
 
 # Project apps tested by jenkins (everything in apps/)
-PROJECT_APPS = filter(lambda f: f != '__init__.py',
-                      tuple(os.listdir(os.path.join('.', 'apps'))))
+APPS_DIR = os.path.join(PROJECT_ROOT, 'apps')
+PROJECT_APPS = tuple(['apps.' + aname
+                     for aname in os.listdir(APPS_DIR)
+                     if os.path.isdir(os.path.join(APPS_DIR, aname))])
 
 INSTALLED_APPS = UPSTREAM_APPS + PROJECT_APPS
 
